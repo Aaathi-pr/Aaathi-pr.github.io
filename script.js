@@ -23,7 +23,6 @@ const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
     multiplier: 1,
-    smoothMobile: false,
     smartphone: {
         smooth: false
     },
@@ -39,6 +38,7 @@ const scroll = new LocomotiveScroll({
 gsap.registerPlugin(ScrollTrigger);
 
 scroll.on('scroll', ScrollTrigger.update);
+window.addEventListener('scroll', ScrollTrigger.update);
 
 ScrollTrigger.scrollerProxy('[data-scroll-container]', {
     scrollTop(value) {
@@ -446,6 +446,48 @@ function revealTextElements() {
 }
 
 // ================================
+// COLLABORATE SECTION MOBILE FIX
+// ================================
+function initCollaborateSection() {
+    const track = document.querySelector('.collaborate-track');
+    if (!track) return;
+
+    const isMobile = window.innerWidth <= 768;
+    const originalItems = Array.from(track.children);
+
+    if (isMobile) {
+        track.removeAttribute('data-scroll');
+        track.removeAttribute('data-scroll-speed');
+        track.removeAttribute('data-scroll-direction');
+        track.classList.add('collaborate-track-mobile');
+        track.style.transform = 'none';
+
+        if (!track.dataset.cloned) {
+            originalItems.forEach(item => {
+                const clone = item.cloneNode(true);
+                track.appendChild(clone);
+            });
+            track.dataset.cloned = 'true';
+        }
+    } else {
+        track.classList.remove('collaborate-track-mobile');
+        track.setAttribute('data-scroll', '');
+        track.setAttribute('data-scroll-speed', '3');
+        track.setAttribute('data-scroll-direction', 'horizontal');
+
+        if (track.dataset.cloned === 'true') {
+            const children = Array.from(track.children);
+            const originalCount = originalItems.length;
+            children.slice(originalCount).forEach(child => track.removeChild(child));
+            track.dataset.cloned = '';
+        }
+    }
+
+    scroll.update();
+    ScrollTrigger.refresh();
+}
+
+// ================================
 // FORM SUBMISSION
 // ================================
 function initContactForm() {
@@ -552,6 +594,7 @@ window.addEventListener('resize', () => {
         windowWidth = window.innerWidth;
         scroll.update();
         ScrollTrigger.refresh();
+        initCollaborateSection();
 
         config.cursorEnabled = window.innerWidth > 1024;
         const cursor = document.querySelector('.cursor');
@@ -584,6 +627,7 @@ function initAll() {
     splitText();
     initProjectAnimations();
     revealTextElements();
+    initCollaborateSection();
     initContactForm();
     initCTAActions();
     initParallaxEffects();
