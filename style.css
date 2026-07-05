@@ -217,6 +217,7 @@ html.has-scroll-dragging {
     flex-direction: column;
     gap: 20px;
     margin-bottom: 80px;
+    align-items: center;
 }
 
 .nav-link {
@@ -228,6 +229,7 @@ html.has-scroll-dragging {
     overflow: hidden;
     line-height: 1;
     letter-spacing: -3px;
+    text-align: center;
 }
 
 .nav-link-text {
@@ -349,28 +351,36 @@ html.has-scroll-dragging {
     background: transparent;
     border: 2px solid #fff;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    padding: 10px;
+    position: relative;
+    padding: 0;
     transition: all 0.3s ease;
 }
 
 .menu-line {
-    width: 100%;
+    position: absolute;
+    left: 12px;
+    right: 12px;
     height: 2px;
     background: #fff;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, top 0.3s ease;
+}
+
+.menu-line:first-child {
+    top: 16px;
+}
+
+.menu-line:last-child {
+    top: 32px;
 }
 
 .menu-toggle.active .menu-line:first-child {
-    transform: rotate(45deg) translateY(8px);
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
 }
 
 .menu-toggle.active .menu-line:last-child {
-    transform: rotate(-45deg) translateY(-8px);
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
 }
 
 @media (max-width: 768px) {
@@ -931,6 +941,57 @@ html.has-scroll-dragging {
     .about-container {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 80px 24px;
+    }
+
+    .about-title {
+        font-size: 2.75rem;
+        max-width: 100%;
+    }
+
+    .about-right {
+        gap: 18px;
+    }
+
+    .about-text {
+        font-size: 1rem;
+        line-height: 1.9;
+        max-width: 100%;
+    }
+
+    .about-cta {
+        margin-top: 18px;
+    }
+
+    .button-54 {
+        width: 100%;
+        text-align: center;
+        padding: 0.85em 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about {
+        padding: 70px 18px;
+    }
+
+    .about-title {
+        font-size: 2.25rem;
+    }
+
+    .about-label {
+        padding: 8px 14px;
+        letter-spacing: 2px;
+    }
+
+    .button-54 {
+        font-size: 14px;
+        padding: 0.9em 1em;
     }
 }
 
