@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Flutter & Web Developer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body style="opacity: 1;">
+  <!-- Page Transition Overlay -->
+  <div class="page-transition" style="pointer-events: none;">
+    <div class="transition-layer"></div>
+    <div class="transition-layer"></div>
+    <div class="transition-layer"></div>
+  </div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress">
+    <div class="progress-bar"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+  </div>
+
+  <!-- Fullscreen Navigation Menu -->
+  <nav class="fullscreen-nav">
+    <div class="nav-overlay"></div>
+    <div class="nav-content-wrap">
+      <div class="nav-links">
+        <a href="#hero" class="nav-link" data-text="HOME"><span class="nav-link-text">HOME</span></a>
+        <a href="#projects" class="nav-link" data-text="WORK"><span class="nav-link-text">WORK</span></a>
+        <a href="#about" class="nav-link" data-text="ABOUT"><span class="nav-link-text">ABOUT</span></a>
+        <a href="#skills" class="nav-link" data-text="SKILLS"><span class="nav-link-text">SKILLS</span></a>
+        <a href="#contact" class="nav-link" data-text="CONTACT"><span class="nav-link-text">CONTACT</span></a>
+      </div>
+      <div class="nav-footer">
+        <div class="nav-socials">
+          <a href="#" class="nav-social">GITHUB</a>
+          <a href="#" class="nav-social">LINKEDIN</a>
+          <a href="#" class="nav-social">TWITTER</a>
+          <a href="#" class="nav-social">DRIBBBLE</a>
+        </div>
+        <div class="nav-contact">
+          <p>HELLO@PORTFOLIO.COM</p>
+          <p>+91 XXX XXX XXXX</p>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Smooth scroll container -->
+  <div id="smooth-wrapper" data-scroll-container>
+    <!-- Navigation Header -->
+    <header class="nav-header" data-scroll-section>
+      <div class="nav-header-content">
+        <div class="logo">
+          <span class="logo-text">DEV</span>
+        </div>
+        <div class="nav-right">
+          <div class="nav-time" id="current-time">00:00</div>
+          <button class="menu-toggle" id="menuToggle">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero" data-scroll-section>
+      <div class="hero-bg-layers">
+        <div class="hero-layer" data-scroll data-scroll-speed="-4"></div>
+        <div class="hero-layer" data-scroll data-scroll-speed="-2"></div>
+        <div class="hero-layer" data-scroll data-scroll-speed="-1"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-left">
+          <!-- Avatar Container -->
+          <div class="hero-avatar-wrap">
+            <div class="avatar-outer">
+              <div class="avatar-inner">
+                <svg class="avatar-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="avatarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#000;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#333;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="100" cy="100" r="90" fill="url(#avatarGradient)" />
+                  <circle cx="70" cy="80" r="10" fill="#fff" />
+                  <circle cx="130" cy="80" r="10" fill="#fff" />
+                  <path d="M 60 130 Q 100 160 140 130" stroke="#fff" stroke-width="4" fill="none"
+                    stroke-linecap="round" />
+                  <circle cx="100" cy="100" r="85" fill="none" stroke="#000" stroke-width="3" />
+                </svg>
+              </div>
+            </div>
+            <div class="avatar-badge">
+              <span class="badge-text">AVAILABLE FOR WORK</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-text-wrap">
+            <div class="hero-label">
+              <span>CREATIVE DEVELOPER</span>
+            </div>
+            <h1 class="hero-title">
+              <div class="title-line-wrap">
+                <span class="title-line">HELLO,</span>
+              </div>
+              <div class="title-line-wrap">
+                <span class="title-line">I'M DEV</span>
+              </div>
+            </h1>
+            <div class="hero-description">
+              <p>A full-stack developer specialized in Flutter & modern web technologies. Creating stunning, performant
+                applications with pixel-perfect design.</p>
+            </div>
+            <div class="hero-cta-wrap">
+              <button class="button-54 hero-cta magnetic-btn" role="button">EXPLORE WORK</button>
+              <button class="button-54 hero-cta-alt magnetic-btn" role="button">GET IN TOUCH</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="scroll-wheel"></div>
+        <span class="scroll-text">SCROLL TO EXPLORE</span>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects" data-scroll-section>
+      <div class="section-header">
+        <h2 class="section-title split-text">SELECTED WORK</h2>
+        <p class="section-subtitle">HOVER TO EXPLORE</p>
+      </div>
+
+      <div class="projects-showcase">
+        <!-- Project 1 -->
+        <div class="project-item">
+          <div class="project-content">
+            <div class="project-image-wrap">
+              <div class="project-image-inner">
+                <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                  <div class="project-overlay"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info-wrap">
+              <div class="project-number">01</div>
+              <h3 class="project-title">FLUTTER MOBILE APP</h3>
+              <p class="project-desc">E-commerce mobile application with real-time updates and seamless payment
+                integration</p>
+              <div class="project-tags">
+                <span class="project-tag">FLUTTER</span>
+                <span class="project-tag">FIREBASE</span>
+                <span class="project-tag">DART</span>
+              </div>
+              <button class="button-54 project-btn magnetic-btn">VIEW CASE</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-item project-reverse">
+          <div class="project-content">
+            <div class="project-image-wrap">
+              <div class="project-image-inner">
+                <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                  <div class="project-overlay"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info-wrap">
+              <div class="project-number">02</div>
+              <h3 class="project-title">INTERACTIVE WEB PLATFORM</h3>
+              <p class="project-desc">Award-winning portfolio website with advanced GSAP animations and WebGL effects
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML/CSS</span>
+                <span class="project-tag">GSAP</span>
+                <span class="project-tag">THREE.JS</span>
+              </div>
+              <button class="button-54 project-btn magnetic-btn">VIEW CASE</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-item">
+          <div class="project-content">
+            <div class="project-image-wrap">
+              <div class="project-image-inner">
+                <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                  <div class="project-overlay"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info-wrap">
+              <div class="project-number">03</div>
+              <h3 class="project-title">DJANGO WEB APP</h3>
+              <p class="project-desc">Full-stack social platform with custom admin dashboard and RESTful API</p>
+              <div class="project-tags">
+                <span class="project-tag">DJANGO</span>
+                <span class="project-tag">PYTHON</span>
+                <span class="project-tag">API</span>
+              </div>
+              <button class="button-54 project-btn magnetic-btn">VIEW CASE</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-item project-reverse">
+          <div class="project-content">
+            <div class="project-image-wrap">
+              <div class="project-image-inner">
+                <div class="project-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                  <div class="project-overlay"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info-wrap">
+              <div class="project-number">04</div>
+              <h3 class="project-title">EVENT MANAGEMENT SITE</h3>
+              <p class="project-desc">Wedding and events showcase with immersive parallax scrolling experience</p>
+              <div class="project-tags">
+                <span class="project-tag">HTML/CSS</span>
+                <span class="project-tag">JAVASCRIPT</span>
+                <span class="project-tag">GSAP</span>
+              </div>
+              <button class="button-54 project-btn magnetic-btn">VIEW CASE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about" data-scroll-section>
+      <div class="about-container">
+        <div class="about-left">
+          <div class="about-label">
+            <span>ABOUT ME</span>
+          </div>
+          <h2 class="about-title">BUILDING CLEAN DIGITAL EXPERIENCES</h2>
+        </div>
+        <div class="about-right">
+          <p class="about-text">I build polished Flutter and web experiences that feel fast, focused, and easy to use.
+          </p>
+          <p class="about-text">Every project is designed with clarity in mind, from interaction details to visual
+            rhythm.</p>
+          <p class="about-text">I enjoy solving problems with clean code, performance-first thinking, and purposeful
+            design.</p>
+          <p class="about-text">If you want a thoughtful developer who delivers refined results, this is the place to
+            start.</p>
+          <a class="button-54 about-cta magnetic-btn" href="resume.pdf" target="_blank" rel="noopener noreferrer">VIEW
+            RESUME</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills" data-scroll-section>
+      <div class="skills-container">
+        <div class="section-header">
+          <span class="section-number">03</span>
+          <h2 class="section-title" data-scroll data-scroll-speed="1">SKILLS & TOOLS</h2>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Mobile Development -->
+          <div class="skill-category" data-scroll data-scroll-speed="1">
+            <h3 class="skill-category-title">Mobile Development</h3>
+            <div class="skill-items">
+              <div class="skill-item magnetic-item">
+                <i class="devicon-flutter-plain colored"></i>
+                <span>Flutter</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-dart-plain colored"></i>
+                <span>Dart</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-firebase-plain colored"></i>
+                <span>Firebase</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-apple-original"></i>
+                <span>iOS</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-android-plain colored"></i>
+                <span>Android</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frontend Development -->
+          <div class="skill-category" data-scroll data-scroll-speed="1.2">
+            <h3 class="skill-category-title">Frontend Development</h3>
+            <div class="skill-items">
+              <div class="skill-item magnetic-item">
+                <i class="devicon-javascript-plain colored"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-react-original colored"></i>
+                <span>React</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-html5-plain colored"></i>
+                <span>HTML5</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-css3-plain colored"></i>
+                <span>CSS3</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-sass-original colored"></i>
+                <span>SASS</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-typescript-plain colored"></i>
+                <span>TypeScript</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend Development -->
+          <div class="skill-category" data-scroll data-scroll-speed="1">
+            <h3 class="skill-category-title">Backend Development</h3>
+            <div class="skill-items">
+              <div class="skill-item magnetic-item">
+                <i class="devicon-python-plain colored"></i>
+                <span>Python</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-django-plain colored"></i>
+                <span>Django</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-nodejs-plain colored"></i>
+                <span>Node.js</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-postgresql-plain colored"></i>
+                <span>PostgreSQL</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-mongodb-plain colored"></i>
+                <span>MongoDB</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Design -->
+          <div class="skill-category" data-scroll data-scroll-speed="1.2">
+            <h3 class="skill-category-title">Tools & Design</h3>
+            <div class="skill-items">
+              <div class="skill-item magnetic-item">
+                <i class="devicon-git-plain colored"></i>
+                <span>Git</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-github-original"></i>
+                <span>GitHub</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-figma-plain colored"></i>
+                <span>Figma</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-vscode-plain colored"></i>
+                <span>VS Code</span>
+              </div>
+              <div class="skill-item magnetic-item">
+                <i class="devicon-docker-plain colored"></i>
+                <span>Docker</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaborate Section -->
+    <section class="collaborate" id="collaborate" data-scroll-section>
+      <div class="collaborate-content">
+        <div class="collaborate-track" data-scroll data-scroll-speed="3" data-scroll-direction="horizontal">
+          <h2 class="collaborate-text">LET'S COLLABORATE</h2>
+          <h2 class="collaborate-text">LET'S COLLABORATE</h2>
+          <h2 class="collaborate-text">LET'S COLLABORATE</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact" id="contact" data-scroll-section>
+      <div class="contact-wrapper">
+        <div class="contact-left">
+          <h2 class="contact-title split-text">CONNECT WITH ME!</h2>
+          <p class="contact-description">Have a project in mind? Let's discuss how we can bring your vision to life.</p>
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <span class="info-label">EMAIL</span>
+              <a href="mailto:hello@portfolio.com" class="info-value">hello@portfolio.com</a>
+            </div>
+            <div class="contact-info-item">
+              <span class="info-label">PHONE</span>
+              <a href="tel:+91xxxxxxxxxx" class="info-value">+91 XXX XXX XXXX</a>
+            </div>
+            <div class="contact-info-item">
+              <span class="info-label">LOCATION</span>
+              <span class="info-value">India</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right">
+          <form class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" class="form-input" placeholder="YOUR NAME" required />
+                <span class="input-border"></span>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-input" placeholder="YOUR EMAIL" required />
+                <span class="input-border"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-input" placeholder="SUBJECT" required />
+              <span class="input-border"></span>
+            </div>
+            <div class="form-group">
+              <textarea class="form-input form-textarea" placeholder="YOUR MESSAGE" rows="6" required></textarea>
+              <span class="input-border"></span>
+            </div>
+            <button type="submit" class="button-54 form-submit magnetic-btn">SEND MESSAGE</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" data-scroll-section>
+      <div class="footer-content">
+        <div class="footer-left">
+          <div class="footer-logo">DEV</div>
+          <p class="footer-tagline">CRAFTING DIGITAL EXPERIENCES</p>
+        </div>
+        <div class="footer-center">
+          <div class="footer-links">
+            <a href="#hero" class="footer-link">HOME</a>
+            <a href="#projects" class="footer-link">WORK</a>
+            <a href="#about" class="footer-link">ABOUT</a>
+            <a href="#contact" class="footer-link">CONTACT</a>
+          </div>
+        </div>
+        <div class="footer-right">
+          <div class="footer-socials">
+            <a href="#" class="footer-social">GH</a>
+            <a href="#" class="footer-social-li">LI</a>
+            <a href="#" class="footer-social-wa">WA</a>
+            <a href="#" class="footer-social-ig">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 ALL RIGHTS RESERVED</p>
+        <p class="footer-credits">DESIGNED & DEVELOPED WITH ❤️</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
